@@ -9,6 +9,14 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <h1 className='text-3xl font-bold underline'>Hello world!</h1>
+      <button
+        type='button'
+        onClick={() => {
+          throw new Error('Sentry Frontend Error');
+        }}
+      >
+        Throw error
+      </button>
     </div>
   );
 }
