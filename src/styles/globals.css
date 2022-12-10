@@ -1,3 +1,119 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* #region  /**=========== Black Color =========== */
+  --tw-color-black: 23 23 23;
+  --color-black: rgb(var(--tw-color-black)); /* #171721 */
+  /* #endregion  /**======== Black Color =========== */
+
+  /* #region  /**=========== White Color =========== */
+  --tw-color-white: 254 254 255;
+  --color-white: rgb(var(--tw-color-white)); /* #FEFEFF */
+  /* #endregion  /**======== White Color =========== */
+
+  /* #region  /**=========== Primary Color =========== */
+  --tw-color-primary-100: 236 242 255;
+  --tw-color-primary-200: 62 126 255;
+  --tw-color-primary-300: 47 95 191;
+  --color-primary-100: rgb(var(--tw-color-primary-100)); /* #ECF2FF */
+  --color-primary-200: rgb(var(--tw-color-primary-200)); /* #3E7EFF */
+  --color-primary-300: rgb(var(--tw-color-primary-300)); /* #2F5FBF */
+  /* #endregion  /**======== Primary Color =========== */
+
+  /* #region  /**=========== Orange Color =========== */
+  --tw-color-orange-100: 253 236 229;
+  --tw-color-orange-200: 239 131 84;
+  --color-orange-100: rgb(var(--tw-color-orange-100)); /* #FDECE5 */
+  --color-orange-200: rgb(var(--tw-color-orange-200)); /* #EF8354 */
+  /* #endregion  /**======== Orange Color =========== */
+
+  /* #region  /**=========== Green Color =========== */
+  --tw-color-green-100: 239 251 247;
+  --tw-color-green-200: 95 220 179;
+  --color-green-100: rgb(var(--tw-color-green-100)); /* #EFFBF7 */
+  --color-green-200: rgb(var(--tw-color-green-200)); /* #5FDCB3 */
+  /* #endregion  /**======== Green Color =========== */
+
+  /* #region  /**=========== Pink Color =========== */
+  --tw-color-pink-100: 254 239 242;
+  --tw-color-pink-200: 251 176 191;
+  --color-pink-100: rgb(var(--tw-color-pink-100)); /* #FEEFF2 */
+  --color-pink-200: rgb(var(--tw-color-pink-200)); /* #FBB0BF */
+  /* #endregion  /**======== Pink Color =========== */
+
+  /* #region  /**=========== Slate Color =========== */
+  --tw-color-slate-100: 128 131 163;
+  --tw-color-slate-200: 41 44 67;
+  --tw-color-slate-300: 33 36 55;
+  --color-slate-100: rgb(var(--tw-color-slate-100)); /* #8083A3 */
+  --color-slate-200: rgb(var(--tw-color-slate-200)); /* #292C43 */
+  --color-slate-300: rgb(var(--tw-color-slate-300)); /* #212437 */
+  /* #endregion  /**======== Slate Color =========== */
+
+  /* #region  /**=========== Gray Color =========== */
+  --tw-color-gray-100: 252 252 253;
+  --tw-color-gray-200: 251 251 255;
+  --tw-color-gray-300: 248 248 252;
+  --tw-color-gray-400: 245 245 250;
+  --tw-color-gray-500: 239 240 241;
+  --tw-color-gray-600: 236 238 239;
+  --tw-color-gray-700: 228 230 232;
+  --tw-color-gray-800: 81 81 88;
+  --color-gray-100: rgb(var(--tw-color-gray-100)); /* #FCFCFD */
+  --color-gray-200: rgb(var(--tw-color-gray-200)); /* #FBFBFF */
+  --color-gray-300: rgb(var(--tw-color-gray-300)); /* #F8F8FC */
+  --color-gray-400: rgb(var(--tw-color-gray-400)); /* #F5F5FA */
+  --color-gray-500: rgb(var(--tw-color-gray-500)); /* #EFF0F1 */
+  --color-gray-600: rgb(var(--tw-color-gray-600)); /* #ECEEEF */
+  --color-gray-700: rgb(var(--tw-color-gray-700)); /* #E4E6E8 */
+  --color-gray-800: rgb(var(--tw-color-gray-800)); /* #515158 */
+  /* #endregion  /**======== Gray Color =========== */
+}
+
+@layer base {
+  html {
+    font-family: 'Public Sans', sans-serif;
+  }
+
+  /* #region  /**=========== Typography =========== */
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    @apply font-bold;
+  }
+
+  h1,
+  h2 {
+    @apply leading-tight;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  h2 {
+    @apply text-3xl;
+  }
+
+  h3 {
+    @apply text-2xl leading-8;
+  }
+
+  h4 {
+    @apply text-xl leading-7;
+  }
+
+  h5 {
+    @apply text-base leading-6;
+  }
+
+  body {
+    @apply text-black;
+  }
+  /* #endregion  /**======== Typography =========== */
+}
