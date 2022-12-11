@@ -10,6 +10,14 @@ const { withSentryConfig } = require('@sentry/nextjs');
 const moduleExports = {
   // Your existing module.exports
   reactStrictMode: true,
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    });
+
+    return config;
+  },
   swcMinify: true,
   sentry: {
     // Use `hidden-source-map` rather than `source-map` as the Webpack `devtool`
