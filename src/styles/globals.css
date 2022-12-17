@@ -13,6 +13,11 @@
   --color-white: rgb(var(--tw-color-white)); /* #FEFEFF */
   /* #endregion  /**======== White Color =========== */
 
+  /* #region  /**=========== Red Color =========== */
+  --tw-color-red: 220 38 38;
+  --color-red: rgb(var(--tw-color-red)); /* #FEFEFF */
+  /* #endregion  /**======== Red Color =========== */
+
   /* #region  /**=========== Primary Color =========== */
   --tw-color-primary-100: 236 242 255;
   --tw-color-primary-200: 62 126 255;

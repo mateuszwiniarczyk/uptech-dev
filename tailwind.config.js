@@ -7,6 +7,7 @@ module.exports = {
       transparent: 'transparent',
       black: 'var(--color-black)',
       white: 'var(--color-white)',
+      red: 'var(--color-red)',
       primary: {
         100: 'var(--color-primary-100)',
         200: 'var(--color-primary-200)',
@@ -41,5 +42,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms')],
 };
