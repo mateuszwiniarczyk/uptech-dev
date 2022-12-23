@@ -103,11 +103,17 @@ const ActionBar = () => (
 
 interface MainLayoutProps {
   readonly children: React.ReactNode;
+  className?: string;
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
+const MainLayout = ({ children, className }: MainLayoutProps) => {
   return (
-    <div className='relative flex min-h-screen flex-col overflow-hidden bg-white pb-20 dark:bg-slate-200'>
+    <div
+      className={clsxm(
+        'relative flex min-h-screen flex-col overflow-hidden bg-white pb-20 dark:bg-slate-200',
+        className
+      )}
+    >
       <nav className='border-b border-gray-700 dark:border-slate-100'>
         <div className='container relative mx-auto flex items-center justify-between py-5 px-4 lg:justify-start'>
           <Logo />

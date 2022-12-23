@@ -1,3 +1,4 @@
+import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
@@ -21,23 +22,17 @@ const Login = () => {
             <InputField
               placeholder='Email'
               type='email'
-              registration={register('email', {
-                maxLength: 3,
-                required: true,
-              })}
+              registration={register('email')}
               error={formState.errors.email}
             />
             <InputField
               placeholder='Password'
               type='password'
-              registration={register('password', {
-                maxLength: 3,
-                required: true,
-              })}
+              registration={register('password')}
               error={formState.errors.password}
             />
 
-            <button type='submit'>Login</button>
+            <Button>Login</Button>
           </>
         )}
       </Form>
