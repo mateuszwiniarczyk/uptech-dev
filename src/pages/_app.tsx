@@ -1,5 +1,6 @@
 import { Public_Sans } from '@next/font/google';
 import type { AppProps } from 'next/app';
+import { SessionProvider } from 'next-auth/react';
 import { ThemeProvider } from 'next-themes';
 
 import '@/styles/globals.css';
@@ -12,11 +13,16 @@ const publicSans = Public_Sans({
   variable: '--font-public-sans',
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
     <ThemeProvider attribute='class'>
       <MainLayout className={`${publicSans.variable} font-sans`}>
-        <Component {...pageProps} />
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
       </MainLayout>
     </ThemeProvider>
   );

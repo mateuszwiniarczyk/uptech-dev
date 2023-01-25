@@ -1,0 +1,53 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  //   shadowDatabaseUrl = env("SHADOW_DATABASE_URL") // Only needed when using a cloud provider that doesn't support the creation of new databases, like Heroku. Learn more: https://pris.ly/migrate-shadow
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Type {
+  EMPLOYEE
+  COMPANY
+}
+
+model User {
+  id           String     @id @default(cuid())
+  createdAt    DateTime   @default(now())
+  role         Role       @default(USER)
+  type         Type
+  email        String     @unique
+  passwordSalt String
+  passwordHash String
+  image        String?
+  Employee     Employee[]
+  Company      Company[]
+
+  @@map("users")
+}
+
+model Employee {
+  id         String @id @default(cuid())
+  firstName  String
+  secondName String
+  userId     String
+  user       User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("employees")
+}
+
+model Company {
+  id     String @id @default(cuid())
+  name   String
+  userId String
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("companies")
+}

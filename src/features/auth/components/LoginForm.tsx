@@ -1,6 +1,5 @@
+import { signIn } from 'next-auth/react';
 import { z } from 'zod';
-
-import { supabase } from '@/lib/supabase';
 
 import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
@@ -17,10 +16,14 @@ type FormValues = {
 };
 
 export const LoginForm = () => {
+  // const { data: session } = useSession();
+  // console.log('session', session);
   async function signInWithEmail(loginData: FormValues) {
-    const { data, error } = await supabase.auth.signInWithPassword(loginData);
-
-    return { data, error };
+    const res = await signIn('credentials', {
+      redirect: false,
+      ...loginData,
+    });
+    return res;
   }
 
   return (

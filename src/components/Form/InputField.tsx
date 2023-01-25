@@ -1,4 +1,8 @@
-import { FieldError, UseFormRegisterReturn } from 'react-hook-form';
+import {
+  FieldError,
+  FieldValues,
+  UseFormRegisterReturn,
+} from 'react-hook-form';
 
 import { clsxm } from '@/lib/clsxm';
 
@@ -7,7 +11,7 @@ interface InputFieldProps {
   className?: string;
   placeholder?: string;
   registration: Partial<UseFormRegisterReturn>;
-  error?: FieldError | undefined;
+  error?: FieldError | FieldValues | undefined;
 }
 
 export const InputField = ({
