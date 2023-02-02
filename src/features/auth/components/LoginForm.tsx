@@ -16,15 +16,13 @@ type FormValues = {
 };
 
 export const LoginForm = () => {
-  // const { data: session } = useSession();
-  // console.log('session', session);
-  async function signInWithEmail(loginData: FormValues) {
+  const signInWithEmail = async (loginData: FormValues) => {
     const res = await signIn('credentials', {
       redirect: false,
       ...loginData,
     });
     return res;
-  }
+  };
 
   return (
     <Form<FormValues, typeof schema> onSubmit={signInWithEmail} schema={schema}>
