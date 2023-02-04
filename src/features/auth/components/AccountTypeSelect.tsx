@@ -1,6 +1,8 @@
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
+import { USER_TYPE } from '@/features/auth/constants';
+
 interface AccountTypeSelectProps {
   registration: Partial<UseFormRegisterReturn>;
 }
@@ -11,7 +13,7 @@ const AccountTypeSelect = ({ registration }: AccountTypeSelectProps) => (
       <input
         className='group peer hidden'
         type='radio'
-        value='COMPANY'
+        value={USER_TYPE.COMPANY}
         id='company'
         {...registration}
         defaultChecked
@@ -44,7 +46,7 @@ const AccountTypeSelect = ({ registration }: AccountTypeSelectProps) => (
       <input
         className='group peer hidden'
         type='radio'
-        value='EMPLOYEE'
+        value={USER_TYPE.EMPLOYEE}
         id='employee'
         {...registration}
       />

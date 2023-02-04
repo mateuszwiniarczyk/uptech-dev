@@ -1,31 +1,18 @@
-import { signIn } from 'next-auth/react';
-import { z } from 'zod';
-
 import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
-const schema = z.object({
-  email: z.string().min(1, 'Required'),
-  password: z.string().min(2, 'Required'),
-});
-
-type FormValues = {
-  email: string;
-  password: string;
-};
+import { useLoginUser } from '@/features/auth/hooks/useLoginUser';
+import { loginSchema } from '@/features/auth/schema';
+import { LoginFormValues } from '@/features/auth/types';
 
 export const LoginForm = () => {
-  const signInWithEmail = async (loginData: FormValues) => {
-    const res = await signIn('credentials', {
-      redirect: false,
-      ...loginData,
-    });
-    return res;
-  };
-
+  const { loginWithEmail, isUserLoginPending } = useLoginUser();
   return (
-    <Form<FormValues, typeof schema> onSubmit={signInWithEmail} schema={schema}>
+    <Form<LoginFormValues, typeof loginSchema>
+      onSubmit={loginWithEmail}
+      schema={loginSchema}
+    >
       {({ register, formState }) => (
         <>
           <InputField
@@ -41,7 +28,9 @@ export const LoginForm = () => {
             error={formState.errors.password}
           />
 
-          <Button type='submit'>Login</Button>
+          <Button type='submit' disabled={isUserLoginPending}>
+            Login
+          </Button>
         </>
       )}
     </Form>
