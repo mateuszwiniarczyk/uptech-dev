@@ -2,15 +2,17 @@ import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
-import { useLoginUser } from '@/features/auth/hooks/useLoginUser';
-import { loginSchema } from '@/features/auth/schema';
-import { LoginFormValues } from '@/features/auth/types';
+import { useLoginUserMutation } from '@/store/authSlice';
+
+import { loginSchema } from '@/schema/auth';
+
+import { LoginFormValues } from '@/types/auth';
 
 export const LoginForm = () => {
-  const { loginWithEmail, isUserLoginPending } = useLoginUser();
+  const [loginUser, { isLoading }] = useLoginUserMutation();
   return (
     <Form<LoginFormValues, typeof loginSchema>
-      onSubmit={loginWithEmail}
+      onSubmit={loginUser}
       schema={loginSchema}
     >
       {({ register, formState }) => (
@@ -28,7 +30,7 @@ export const LoginForm = () => {
             error={formState.errors.password}
           />
 
-          <Button type='submit' disabled={isUserLoginPending}>
+          <Button type='submit' disabled={isLoading}>
             Login
           </Button>
         </>

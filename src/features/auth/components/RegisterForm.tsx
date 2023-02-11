@@ -2,18 +2,20 @@ import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
+import { useRegisterUserMutation } from '@/store/authSlice';
+
+import { USER_TYPE } from '@/constant/user';
 import { AccountTypeSelect } from '@/features/auth/components/AccountTypeSelect';
-import { USER_TYPE } from '@/features/auth/constants';
-import { useRegisterUser } from '@/features/auth/hooks/useRegisterUser';
-import { registerSchema } from '@/features/auth/schema';
-import { RegisterFormValues } from '@/features/auth/types';
+import { registerSchema } from '@/schema/auth';
+
+import { RegisterFormValues } from '@/types/auth';
 
 export const RegisterForm = () => {
-  const { registerWithEmail, isUserRegisterPending } = useRegisterUser();
+  const [registerUser, { isLoading }] = useRegisterUserMutation();
 
   return (
     <Form<RegisterFormValues, typeof registerSchema>
-      onSubmit={registerWithEmail}
+      onSubmit={registerUser}
       schema={registerSchema}
     >
       {({ register, formState, watch }) => {
@@ -58,7 +60,7 @@ export const RegisterForm = () => {
               error={formState.errors.password}
             />
 
-            <Button type='submit' disabled={isUserRegisterPending}>
+            <Button type='submit' disabled={isLoading}>
               Continue
             </Button>
           </>

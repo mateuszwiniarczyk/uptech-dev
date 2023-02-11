@@ -1,7 +1,7 @@
 import React from 'react';
 import { UseFormRegisterReturn } from 'react-hook-form';
 
-import { USER_TYPE } from '@/features/auth/constants';
+import { USER_TYPE } from '@/constant/user';
 
 interface AccountTypeSelectProps {
   registration: Partial<UseFormRegisterReturn>;
