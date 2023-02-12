@@ -60,8 +60,8 @@ export const RegisterForm = () => {
               error={formState.errors.password}
             />
 
-            <Button type='submit' disabled={isLoading}>
-              Continue
+            <Button type='submit' disabled={isLoading} isLoading={isLoading}>
+              Create an account
             </Button>
           </>
         );

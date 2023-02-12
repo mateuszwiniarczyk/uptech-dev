@@ -26,7 +26,7 @@ export const InputField = ({
       placeholder={placeholder}
       type={type}
       className={clsxm(
-        'block w-full appearance-none rounded-lg border border-gray-700 bg-transparent p-5 text-xs font-bold placeholder-slate-100 shadow-sm focus:border-primary-200 focus:outline-none focus:ring-primary-200',
+        'block w-full appearance-none rounded-lg border border-gray-700 bg-transparent p-4 text-sm font-bold placeholder-slate-100 shadow-sm focus:border-primary-200 focus:outline-none focus:ring-primary-200',
         className
       )}
       {...registration}

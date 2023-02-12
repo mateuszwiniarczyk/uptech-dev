@@ -30,7 +30,7 @@ export const LoginForm = () => {
             error={formState.errors.password}
           />
 
-          <Button type='submit' disabled={isLoading}>
+          <Button type='submit' disabled={isLoading} isLoading={isLoading}>
             Login
           </Button>
         </>

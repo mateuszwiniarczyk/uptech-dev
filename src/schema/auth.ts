@@ -3,8 +3,8 @@ import { z } from 'zod';
 import { USER_TYPE } from '@/constant/user';
 
 const baseRegisterSchema = z.object({
-  email: z.string().email(),
-  password: z.string(),
+  email: z.string().email().min(5, 'Required'),
+  password: z.string().min(6, 'Required'),
 });
 
 export const registerSchema = z.discriminatedUnion('type', [
@@ -23,7 +23,4 @@ export const registerSchema = z.discriminatedUnion('type', [
     .merge(baseRegisterSchema),
 ]);
 
-export const loginSchema = z.object({
-  email: z.string().min(1, 'Required'),
-  password: z.string().min(2, 'Required'),
-});
+export const loginSchema = z.object({}).merge(baseRegisterSchema);
