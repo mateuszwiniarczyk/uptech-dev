@@ -5,8 +5,10 @@ import { ThemeProvider } from 'next-themes';
 import { Provider } from 'react-redux';
 
 import '@/styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { MainLayout } from '@/components/Layout/MainLayout';
+import { Notifications } from '@/components/Notifications/Notifications';
 
 import { store } from '@/store';
 
@@ -26,6 +28,7 @@ export default function App({
         <MainLayout className={`${publicSans.variable} font-sans`}>
           <SessionProvider session={session}>
             <Component {...pageProps} />
+            <Notifications />
           </SessionProvider>
         </MainLayout>
       </ThemeProvider>

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { USER_TYPE } from '@/constant/user';
+import { USER_TYPE } from '@/constants/user';
 
 const baseRegisterSchema = z.object({
   email: z.string().email().min(5, 'Required'),

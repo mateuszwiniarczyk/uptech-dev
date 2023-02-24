@@ -2,8 +2,7 @@ import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
-import { useLoginUserMutation } from '@/store/authSlice';
-
+import { useLoginUserMutation } from '@/features/auth/authSlice';
 import { loginSchema } from '@/schema/auth';
 
 import { LoginFormValues } from '@/types/auth';

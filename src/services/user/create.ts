@@ -2,7 +2,7 @@ import bcrypt from 'bcryptjs';
 
 import { prisma } from '@/lib/prismadb';
 
-import { USER_TYPE } from '@/constant/user';
+import { USER_TYPE } from '@/constants/user';
 import { registerSchema } from '@/schema/auth';
 import { hashPassword } from '@/utils/hashPassword';
 

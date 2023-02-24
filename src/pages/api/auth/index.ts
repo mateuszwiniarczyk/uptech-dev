@@ -11,9 +11,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       //   try {
       // const user = await createUser(payload);
 
-      res.status(200).json({ status: 'success', message: 'User created' });
+      // res.status(200).json({ status: 'success', message: 'User created' });
       //   } catch (error) {
-      // res.status(422).json({ status: 'not_created', error: error.message });
+      res
+        .status(422)
+        .json({ status: 'not_created', message: 'User not created' });
       //   }
 
       break;

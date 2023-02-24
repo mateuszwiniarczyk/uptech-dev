@@ -2,9 +2,8 @@ import { Button } from '@/components/Elements/Button';
 import { Form } from '@/components/Form/Form';
 import { InputField } from '@/components/Form/InputField';
 
-import { useRegisterUserMutation } from '@/store/authSlice';
-
-import { USER_TYPE } from '@/constant/user';
+import { USER_TYPE } from '@/constants/user';
+import { useRegisterUserMutation } from '@/features/auth/authSlice';
 import { AccountTypeSelect } from '@/features/auth/components/AccountTypeSelect';
 import { registerSchema } from '@/schema/auth';
 

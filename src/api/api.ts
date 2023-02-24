@@ -9,6 +9,10 @@ const axiosParams = {
 // Create axios instance with default params
 const axiosInstance = axios.create(axiosParams);
 
+axiosInstance.interceptors.response.use((response) => {
+  return response.data;
+});
+
 // Main api function
 const api = (axios: AxiosInstance) => {
   return {

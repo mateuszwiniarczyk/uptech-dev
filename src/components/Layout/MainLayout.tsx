@@ -7,7 +7,7 @@ import { clsxm } from '@/lib/clsxm';
 
 import { Logo } from '@/components/Elements/Logo';
 
-import { ROUTES } from '@/constant/routes';
+import { ROUTES } from '@/constants/routes';
 
 import CloseMenuIcon from '~/svg/close.svg';
 import DarkModeIcon from '~/svg/darkMode.svg';
